@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Toaster } from "@/components/ui/sonner"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -19,7 +21,6 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    // Suppress hydration warning is required by next-themes
     <html
       lang="en"
       className={cn(
@@ -54,11 +55,12 @@ export default function RootLayout({
               <Link href="/admin">
                 <Button variant="default">Admin Dashboard</Button>
               </Link>
-              {/* Note: You can drop the shadcn ModeToggle component here later */}
+              <AnimatedThemeToggler variant="circle" />
             </div>
           </nav>
 
           <main className="container mx-auto flex-grow px-4">{children}</main>
+          <Toaster position="top-center" />
         </ThemeProvider>
       </body>
     </html>
