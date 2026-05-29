@@ -2,7 +2,6 @@ import { getArticles } from "@/actions/articleActions"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-// The categories we defined in creation form
 const CATEGORIES = ["World", "Politics", "Technology", "Business", "Sports"]
 
 export const dynamic = "force-dynamic"

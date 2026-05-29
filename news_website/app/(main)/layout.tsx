@@ -2,6 +2,7 @@ import Link from "next/link"
 import { SignInButton, Show, UserButton } from "@clerk/nextjs"
 import { auth, currentUser } from "@clerk/nextjs/server"
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
+import Footer from "@/components/Footer"
 
 export default async function MainLayout({
   children,
@@ -18,7 +19,7 @@ export default async function MainLayout({
     <div className="flex min-h-screen flex-col">
       {/* Topbar */}
       <div className="flex items-center justify-between border-b border-border px-6 py-3 text-xs font-semibold tracking-widest uppercase">
-        <div className="hidden sm:block">The Global Newspaper</div>
+        <div className="hidden sm:block">The Local Newspaper</div>
         <div className="ml-auto flex items-center gap-6">
           <Show when="signed-out">
             <SignInButton mode="modal">
@@ -39,7 +40,7 @@ export default async function MainLayout({
       <header className="flex justify-center border-b border-border py-10">
         <Link href="/">
           <h1 className="cursor-pointer text-center font-serif text-6xl font-bold tracking-tighter uppercase md:text-8xl">
-            Global News
+            Local News
           </h1>
         </Link>
       </header>
@@ -92,26 +93,7 @@ export default async function MainLayout({
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto bg-foreground px-8 py-12 text-xs tracking-widest text-background uppercase">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex gap-8">
-            <Link href="#" className="hover:opacity-70">
-              Follow
-            </Link>
-            <span className="text-muted opacity-50">
-              © 2026 All Rights Reserved
-            </span>
-          </div>
-          <div className="flex gap-8">
-            <Link href="#" className="hover:opacity-70">
-              Legal
-            </Link>
-            <Link href="#" className="hover:opacity-70">
-              Subscribe
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
