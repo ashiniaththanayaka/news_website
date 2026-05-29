@@ -1,4 +1,4 @@
-# Global News Portal
+# Local News Portal
 A dynamic, full-stack digital newspaper platform built for modern content delivery. This application allows users to publish stories, categorize news, and manage content through a secure, role-based dashboard.
 
 # Key Features
@@ -67,6 +67,7 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_c3RpcnJpbmctYmx1ZWdpbGwtMjQuY2xlcmsuYW
 CLERK_SECRET_KEY=sk_test_cvxIYH39tFMur2zJHqjcx1W8e6fQ3X31r09jXE5s9A
 
 ADMIN_EMAIL=replace_your_email_after_signup_to_login_as_admin
+
 EMAIL_USER=sudheeradilum@gmail.com
 EMAIL_APP_PASSWORD=vfxhuivnoftgzrcx
 
