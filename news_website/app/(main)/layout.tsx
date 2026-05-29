@@ -46,7 +46,7 @@ export default async function MainLayout({
       </header>
 
       {/* Subnav */}
-      <nav className="flex justify-center gap-8 overflow-x-auto border-b border-border px-4 py-4 text-xs font-medium tracking-widest whitespace-nowrap uppercase sm:text-sm">
+      <nav className="flex justify-start gap-5 overflow-x-auto border-b border-border px-4 py-4 text-xs font-medium tracking-widest whitespace-nowrap uppercase sm:text-sm md:justify-center md:gap-8">
         <Link href="/" className="underline-offset-4 hover:underline">
           Home
         </Link>
