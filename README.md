@@ -66,8 +66,8 @@ NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_c3RpcnJpbmctYmx1ZWdpbGwtMjQuY2xlcmsuYWNjb3VudHMuZGV2JA
 CLERK_SECRET_KEY=sk_test_cvxIYH39tFMur2zJHqjcx1W8e6fQ3X31r09jXE5s9A
 
-ADMIN_EMAIL=sudheeradilum@gmail.com
-EMAIL_USER=replace_your_email_after_signup_to_login_as_admin
+ADMIN_EMAIL=replace_your_email_after_signup_to_login_as_admin
+EMAIL_USER=sudheeradilum@gmail.com
 EMAIL_APP_PASSWORD=vfxhuivnoftgzrcx
 
 # Run the development server:
