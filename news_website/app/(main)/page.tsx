@@ -37,7 +37,6 @@ export default async function HomePage() {
             const pos = index % 10
             const isHero = pos === 0 || pos === 7
 
-            // Added z-10 so the articles sit slightly above the background spine
             let gridClasses =
               "flex flex-col group border-b border-border pb-6 lg:border-b-0 lg:pb-0 relative z-10 "
 
