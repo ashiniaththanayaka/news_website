@@ -7,18 +7,22 @@ import { Loader2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 interface ArticleFormProps {
-  article?: any // If provided, we are Editing. If missing, Creating new.
-  onClose?: () => void // Used if the form is inside a Modal to close it
+  article?: any
+  onClose?: () => void
 }
 
 export default function ArticleForm({ article, onClose }: ArticleFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
+  const isEditing = !!article
 
-  const isEditing = !!article // True if an article was passed in
-
-  async function formAction(formData: FormData) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
     setIsSubmitting(true)
+
+    // Grab the form data
+    const formData = new FormData(e.currentTarget)
+
     try {
       if (isEditing) {
         await updateArticle(article._id, formData)
@@ -28,7 +32,6 @@ export default function ArticleForm({ article, onClose }: ArticleFormProps) {
         toast.success("Article published successfully!")
       }
 
-      // If inside a modal, close it. Otherwise, route back.
       if (onClose) {
         onClose()
       } else {
@@ -48,7 +51,7 @@ export default function ArticleForm({ article, onClose }: ArticleFormProps) {
   }
 
   return (
-    <form action={formAction} className="flex flex-col gap-6">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <label className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
           Headline
